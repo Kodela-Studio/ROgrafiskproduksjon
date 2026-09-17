@@ -10,9 +10,8 @@
 <body>
   <header class="site-header">
     <a href="index.html" class="logo-link" aria-label="Rolf Ottesen forside">
-      <img src="assets/logo/rolf-ottesen-logo.png" alt="Rolf Ottesen Grafisk Produksjon" class="site-logo">
+      <img src="assets/logo/logo.png" alt="Rolf Ottesen Grafisk Produksjon" class="site-logo">
     </a>
-
     <nav class="main-nav" aria-label="Hovednavigasjon">
       <a href="tjenester.html">Tjenester</a>
       <a href="arbeider.html">Våre arbeider</a>
@@ -24,13 +23,13 @@
 
   <main>
     <section class="hero">
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="assets/video/rolf-ottesen-hero.mp4" type="video/mp4">
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+        <source src="assets/video/rolfOttsersenHeroVideo.mp4" type="video/mp4">
       </video>
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="eyebrow">Grafisk produksjon · siden 1946</p>
-        <h1>Vi setter ideer på trykk.</h1>
+        <h1>Vi setter<br>ideer på trykk.</h1>
         <p>Fra idé til ferdig produkt. Grafisk produksjon bygget på erfaring, presisjon og godt håndverk.</p>
         <div class="hero-actions">
           <a href="tjenester.html" class="button button-primary">Utforsk tjenestene</a>
@@ -42,19 +41,31 @@
     <section class="section intro-section">
       <p class="eyebrow">Rolf Ottesen</p>
       <h2>Fra første idé til ferdig produkt.</h2>
-      <p>Her bygger vi videre med bedriftens historie, kompetanse og tjenester når innholdet er bekreftet.</p>
+      <p>Vi kombinerer erfaring med moderne grafisk produksjon og hjelper bedrifter med å gjøre ideer om til produkter som kan sees, holdes og brukes.</p>
     </section>
 
     <section class="section services-preview">
       <div class="section-heading">
         <p class="eyebrow">Tjenester</p>
-        <h2>Grafisk produksjon for bedrifter.</h2>
+        <h2>Mer enn trykk på papir.</h2>
       </div>
       <div class="service-grid">
-        <a href="tjenester.html" class="service-card"><span>01</span><h3>Trykksaker</h3></a>
-        <a href="tjenester.html" class="service-card"><span>02</span><h3>Skilt og plater</h3></a>
-        <a href="tjenester.html" class="service-card"><span>03</span><h3>Profilering</h3></a>
-        <a href="tjenester.html" class="service-card"><span>04</span><h3>Spesialproduksjon</h3></a>
+        <a href="tjenester.html" class="service-card"><span>01</span><h3>Trykksaker</h3><p>Brosjyrer, materiell og grafiske produkter.</p></a>
+        <a href="tjenester.html" class="service-card service-card-image"><span>02</span><h3>Skilt og plater</h3><p>Produksjon på aluminium og andre materialer.</p></a>
+        <a href="tjenester.html" class="service-card"><span>03</span><h3>Profilering</h3><p>Synlige løsninger for bedrift og merkevare.</p></a>
+        <a href="tjenester.html" class="service-card"><span>04</span><h3>Spesialproduksjon</h3><p>Løsninger tilpasset prosjektet ditt.</p></a>
+      </div>
+    </section>
+
+    <section class="feature-section">
+      <div class="feature-image-wrap">
+        <img src="assets/images/aluminiumbilde.png" alt="Produksjon av grafikk på aluminiumsplate" class="feature-image">
+      </div>
+      <div class="feature-copy">
+        <p class="eyebrow">Produksjon</p>
+        <h2>Fra papir til aluminium.</h2>
+        <p>Grafisk produksjon handler om mer enn én type materiale. Vi finner løsningen som passer uttrykket, bruken og prosjektet.</p>
+        <a href="tjenester.html" class="text-link">Se hva vi kan produsere →</a>
       </div>
     </section>
 
@@ -78,7 +89,6 @@
     <p>© Rolf Ottesen Grafisk Produksjon</p>
     <p>Nettside av Kodela Studio</p>
   </footer>
-
   <script src="js/main.js"></script>
 </body>
 </html>
