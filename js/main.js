@@ -5,8 +5,18 @@ const previewStyles=document.createElement('link');previewStyles.rel='stylesheet
 const PREVIEW_KEY='rolf-ottesen-preview-access';
 const PREVIEW_PASSWORD='1946';
 
+function startHeroVideo(){
+  const video=document.querySelector('.hero-video');
+  if(!video)return;
+  video.muted=true;
+  video.defaultMuted=true;
+  video.playsInline=true;
+  const play=()=>{const attempt=video.play();if(attempt&&typeof attempt.catch==='function')attempt.catch(()=>{});};
+  if(video.readyState>=2)play();else video.addEventListener('canplay',play,{once:true});
+}
+
 function createPreviewLock(){
-  if(sessionStorage.getItem(PREVIEW_KEY)==='granted')return;
+  if(sessionStorage.getItem(PREVIEW_KEY)==='granted'){startHeroVideo();return;}
   document.documentElement.classList.add('preview-locked');
   const lock=document.createElement('div');
   lock.className='preview-lock';
@@ -21,6 +31,7 @@ function createPreviewLock(){
       sessionStorage.setItem(PREVIEW_KEY,'granted');
       document.documentElement.classList.remove('preview-locked');
       lock.remove();
+      startHeroVideo();
     }else{
       error.textContent='Feil passord. Prøv igjen.';
       input.value='';
@@ -31,5 +42,6 @@ function createPreviewLock(){
 }
 
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',createPreviewLock);else createPreviewLock();
+window.addEventListener('pageshow',startHeroVideo);
 
 const menuButton=document.querySelector('.menu-toggle');const nav=document.querySelector('.main-nav');if(menuButton&&nav){menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));document.body.classList.toggle('menu-open',!open)});nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menuButton.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}));document.addEventListener('keydown',e=>{if(e.key==='Escape'){menuButton.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}})}
